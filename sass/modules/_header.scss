@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+.header {
+  background: url("../../images/BG_HEADER.png");
+  // background-size: cover;
+  min-height: 664px;
+  font-family: Roboto;
+  color: $white;
+  @include e(nav) {
+    min-height: 62px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px 25px 25px 15px;
+  }
+  @include e(logo) {
+    width: 50%;
+    font-weight: 300;
+    font-size: 17.5px;
+    line-height: 21px;
+  }
+  @include e(menu) {
+    @include m(list) {
+      display: none;
+    }
+  }
+  @include e(content) {
+    padding: 112px 15px;
+    h1 {
+      font-family: Roboto;
+      font-weight: 500;
+      font-size: 53.2px;
+      line-height: 62px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 18.2px;
+      line-height: 26px;
+      font-weight: normal;
+      text-align: justify;
+    }
+    i {
+      margin-right: 5px;
+    }
+    a {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 16px;
+      padding: 18px 35px;
+      margin-top: 42px;
+    }
+  }
+}
+
+@include mq(md) {
+  .header {
+    @include e(nav) {
+      padding: 15px;
+    }
+    @include e(logo) {
+      line-height: 2;
+    }
+    @include e(menu) {
+      @include m(hamburger) {
+        display: none;
+      }
+      @include m(list) {
+        display: block;
+      }
+    }
+    @include e(menuItem) {
+      float: left;
+      padding-left: 28px;
+      line-height: 2;
+    }
+    .fa-cloud-download-alt {
+      margin-right: 3px;
+    }
+  }
+}
+
+@include mq(xl) {
+  .container {
+    width: 1144px;
+    margin: 0 auto;
+  }
+  .header {
+    background: url("../../images/BG_HEADER_XL.png") no-repeat;
+    background-size: cover;
+    @include e(nav) {
+      padding: 15px;
+    }
+    @include e(logo) {
+      line-height: 2;
+    }
+    @include e(menu) {
+      @include m(hamburger) {
+        display: none;
+      }
+      @include m(list) {
+        display: block;
+      }
+    }
+    @include e(menuItem) {
+      float: left;
+      padding-left: 28px;
+      line-height: 2;
+    }
+    @include e(content) {
+      .content {
+        width: 50%;
+      }
+    }
+    .fa-cloud-download-alt {
+      margin-right: 3px;
+    }
+  }
+}
